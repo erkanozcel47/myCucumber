@@ -6,7 +6,7 @@ Scenario: Verify search term
     Then the search box must contain the search term
     
     
-    @temp
+    
     Scenario: Verify the login 
     Given the user on the login page
     When the user enters the first name and last name

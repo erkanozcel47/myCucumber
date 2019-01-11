@@ -24,6 +24,5 @@ public class LoginPage {
 	public WebElement button;
 	
 	
-	
 
 }
