@@ -1,6 +1,6 @@
 Feature: Product info
 
-@temp
+ 
 Scenario Outline: Product details with map n outline
 	Given the user is on the page
 	When the user selects "<product>"

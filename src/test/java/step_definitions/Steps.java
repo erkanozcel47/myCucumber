@@ -8,18 +8,45 @@ import cucumber.api.java.en.Given;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import net.bytebuddy.agent.builder.AgentBuilder.Listener;
+
+import java.util.List;
+import java.util.Map;
+
 import org.junit.Assert;
 import pages.EmailPage;
 import pages.LoginPage;
 import utilities.BrowserUtilities;
 import utilities.ConfigurationReader;
 import utilities.Driver;
+import utilities.ExcelUtil;
 
 public class Steps {
 	
 	EmailPage emailPage= new EmailPage();
 	
+
+@Then("the system should display the promoted items")
+public void the_system_should_display_the_promoted_items() {
+	ExcelUtil excelObject = new ExcelUtil("C:/Users/erkan/OneDrive/Masaüstü/Products.xlsx","Sheet1");
+	List<Map<String,String>> allRows=excelObject.getDataList();
+	for (Map<String, String> row : allRows) {
+		String product= row.get("Product");
+	if(	row.get("Execute").equalsIgnoreCase("y")){
+		 System.out.println("Testing "+product);	
+		
+		}else {
+			 System.out.println("Skiping "+product);
+		}
+	}
 	
+}
+
+@Then("the item details should be correct")
+public void the_item_details_should_be_correct() {
+    
+}
+
 	
 	
 	
